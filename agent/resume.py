@@ -1,10 +1,8 @@
 import os
-import re
 import PyPDF2
 import nltk
 from nltk.corpus import stopwords
 
-# Download necessary NLTK data
 nltk.download('punkt')
 nltk.download('stopwords')
 
