@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Job Matches - Job Match AI Agent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .score-box {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .job-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .match-score {
+            float: right;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Your Job Matches</h1>
+
+    <div class="score-box">
+        <h2>ATS Score: {{ ats_score }}%</h2>
+        <p>This is how well your resume is likely to perform in Applicant Tracking Systems</p>
+    </div>
+
+    <h2>Your Skills</h2>
+    <div>
+        {% for skill in skills %}
+        <span class="skill-tag">{{ skill }}</span> {% endfor %}
+    </div>
+
+    <h2>Matching Jobs</h2>
+    {% for item in jobs %}
+    <div class="job-card">
+        <span class="match-score">{{ item.match_score|round|int }}% Match</span>
+        <h3>{{ item.job.title }}</h3>
+        <h4>{{ item.job.company }} - {{ item.job.location }}</h4>
+        <p>{{ item.job.description }}</p>
+        <a href="{{ item.job.url }}" class="btn" target="_blank">View Job</a>
+        <button class="btn" style="background-color: #2196F3;">Auto Apply</button>
+    </div>
+    {% endfor %}
+
+    <p><a href="/" class="btn" style="background-color: #f44336;">Upload New Resume</a></p>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Job Match AI Agent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .upload-box {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Job Match AI Agent</h1>
+    <p>Upload your resume to find matching jobs and get an ATS score</p>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="upload-box">
+            <h3>Upload Your Resume</h3>
+            <input type="file" name="resume" accept=".pdf">
+            <p>Only PDF files are supported</p>
+        </div>
+        <button type="submit" class="btn">Find Matching Jobs</button>
+    </form>
+</body>
+
+</html>

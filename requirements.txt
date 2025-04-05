@@ -1,0 +1,11 @@
+google-cloud-aiplatform
+google-generativeai
+spacy
+sentence-transformers
+flask==2.0.1         # Web framework
+pypdf2==2.0.0        # PDF parsing for resumes
+nltk==3.6.2          # Natural language processing
+requests==2.26.0     # HTTP requests for job APIs
+beautifulsoup4==4.9.3 # Web scraping
+langchain==0.0.267   # Agent framework
+python-dotenv==0.19.0 # Environment variables
